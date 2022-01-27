@@ -1,4 +1,4 @@
 a = 1
 b = 2
 c = a+b
-print(c+3)
+print(c)
