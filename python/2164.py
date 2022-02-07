@@ -1,13 +1,16 @@
+from collections import deque
+
+
 n = int(input())
 
-cards = list(range(1, n))
+cards = deque(range(1, n+1))
 
 while 1:
-    if len(cards) == 1:
+    if len(cards) <= 1:
         break
 
-    cards.pop()
+    cards.popleft()
     cards.append(cards[0])
-    del cards[0]
+    cards.popleft()
 
 print(cards[0])
