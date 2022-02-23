@@ -21,6 +21,45 @@ n8 = Node(80)
 class BinaryTree():
     def __init__(self):
         self.root = None
+    # 전위 순회
+
+    def preorder(self, n):
+        if n != None:
+            print(n.item, "", end='')
+            if n.left:
+                self.preorder(n.left)
+            if n.right:
+                self.preorder(n.right)
+    # 후위순회
+
+    def postorder(self, n):
+        if n != None:
+            if n.left:
+                self.postorder(n.left)
+            if n.right:
+                self.postorder(n.right)
+            print(n.item, "", end='')
+    # 중위 순회
+
+    def inorder(self, n):
+        if n != None:
+            if n.left:
+                self.inorder(n.left)
+            print(n.item, "", end="")
+            if n.right:
+                self.inorder(n.right)
+
+    # 레벨 순회
+    def levelorder(self, n):
+        q = deque()
+        q.append(n)
+        while q:
+            t = q.popleft()
+            print(t.item, "", end="")
+            if t.left != None:
+                q.append(t.left)
+            if t.right != None:
+                q.append(t.right)
 
 
 tree = BinaryTree()
@@ -32,35 +71,3 @@ n2.right = n5
 n3.left = n6
 n3.right = n7
 n4.left = n8
-
-# 전위 순회
-
-
-def preorder(self, n):
-    if n != None:
-        print(n.item, "", end='')
-        if n.left:
-            self.preorder(n.left)
-        if n.right:
-            self.preorder(n.right)
-# 후위순회
-
-
-def postorder(self, n):
-    if n != None:
-        if n.left:
-            self.postorder(n.left)
-        if n.right:
-            self.postorder(n.right)
-        print(n.item, "", end='')
-# 중위 순회
-
-
-def inorder(self, n):
-    if n != None:
-        if n.left:
-            self.inorder(n.left)
-        print(n.item, "", end="")
-        if n.right:
-            self.inorder(n.right)
-# 레벨 순회
