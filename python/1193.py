@@ -1,6 +1,6 @@
 n = int(input())
 
-depth = 0
+depth = 1
 
 while n > depth:
     n -= depth
