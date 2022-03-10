@@ -5,13 +5,12 @@ for _ in range(n) :
     
     dist = ((x2-x1) ** 2 + (y2-y1) ** 2)**0.5
     
-    if dist > r1 + r2 :
-        print(0)
-    elif dist == r1 + r2 :
+    if dist == 0 and r1 == r2 :  # 두 원이 동심원이고 반지름이 같을 때
+        print(-1)
+    elif dist == r1 + r2 or dist == abs(r1-r2) :
         print(1)
     elif abs(r1-r2) < dist < r1 + r2 :
         print(2)
-    elif dist == abs(r1-r2) :
-        print(1)
-    elif dist < abs(r1-r2) :
+    else : 
         print(0)
+    
