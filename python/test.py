@@ -1,19 +1,19 @@
-class Node:
-    def __init__(self, item):
-        self.item = item
-        self.parent = None
-        self.child = list()
-
-    def __str__(self):
-        return str(self.item)
+n = 20
+team_sep = [1, 1, 2, 2]
+visited = [0] * n
+team = list()
 
 
-n = Node(1)
-n1 = Node(2)
-nodes = list()
-nodes.append(n)
-nodes.append(n1)
+def seperating(depth, idx):
+    if depth == n//2:
+        print(team)
+        return
+        #answer = min(answer, calc())
+    for i in range(idx, n):
+        if i not in team:
+            team.append(i)
+            seperating(depth + 1, idx + 1)
+            team.pop()
 
-for i in nodes:
-    if i == 2:
-        print(i)
+
+seperating(0, 0)
