@@ -2,18 +2,14 @@ import heapq
 
 
 n = int(input())
+heap = list(map(int, input().split()))
+heapq.heapify(heap)
+for _ in range(n-1):
+    num = list(map(int, input().split()))
 
-table = list()
-for _ in range(n) :
-    h = list()
-    row = list(map(int,input().split()))
-    for i in range(len(row)) :
-        heapq.heappush(h, row[i]*-1)
-    table.append(h)
-    print(h)
-
-heap = list()
-for i in range(n) :
-    heapq.heappush(heap, heapq.heappop(table[i]) * -1)
+    for i in num:
+        if i > heap[0]:
+            heapq.heappush(heap, i)
+            heapq.heappop(heap)
 
 print(heapq.heappop(heap))
