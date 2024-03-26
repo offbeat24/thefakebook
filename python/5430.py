@@ -6,7 +6,11 @@ T = int(input())
 for _ in range(T) :
   cmd = list(input().rstrip())
   n = int(input().rstrip())
-  x = list(input().strip().lstrip('[').rstrip(']').split(','))
+  xx = input().strip()
+  if xx == "[]" :
+    x = list()
+  else :
+    x = list(xx.lstrip('[').rstrip(']').split(','))
   st = 0
   en = len(x) - 1
   di = True

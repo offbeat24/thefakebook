@@ -1,4 +1,5 @@
 {
   "editor.formatOnSave": false,
-  "editor.formatOnSaveMode": "file"
+  "editor.formatOnSaveMode": "file",
+  "python.terminal.launchArgs": []
 }
